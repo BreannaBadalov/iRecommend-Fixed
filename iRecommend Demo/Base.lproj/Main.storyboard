@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Home Screen View Controller" customClass="ViewController" customModule="iRecommend_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iRecommend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0E-wB-uIC">
-                                <rect key="frame" x="156.5" y="437.5" width="101" height="21"/>
+                                <rect key="frame" x="156.5" y="410.5" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,6 +37,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Vq6-wB-v7P"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,7 +46,7 @@
         <!--Recommendation View Controller-->
         <scene sceneID="OqC-ps-QKt">
             <objects>
-                <viewController id="I2U-bV-ZVJ" userLabel="Recommendation View Controller" sceneMemberID="viewController">
+                <viewController id="I2U-bV-ZVJ" userLabel="Recommendation View Controller" customClass="ViewController" customModule="iRecommend_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qGE-QU-IeK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,28 +57,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(recommendation here)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="999-KL-I7a">
-                                <rect key="frame" x="116.5" y="305" width="181" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iF-e5-rTe">
+                                <rect key="frame" x="166.5" y="427" width="81" height="30"/>
+                                <state key="normal" title="Randomize!"/>
+                                <connections>
+                                    <action selector="setRandomRecommendation:" destination="I2U-bV-ZVJ" eventType="touchUpInside" id="9z4-WN-YKE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90q-jj-Vld">
+                                <rect key="frame" x="45" y="677" width="41" height="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Sj6-kB-ybQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbZ-dH-j0S">
+                                <rect key="frame" x="186" y="313" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iF-e5-rTe">
-                                <rect key="frame" x="167" y="427" width="81" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Randomize!"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="k2U-yV-AJS" firstAttribute="top" secondItem="LSJ-pI-bMa" secondAttribute="top" constant="240" id="5PT-34-ywO"/>
-                            <constraint firstItem="999-KL-I7a" firstAttribute="centerX" secondItem="qGE-QU-IeK" secondAttribute="centerX" id="DPU-Lq-KaM"/>
                             <constraint firstItem="k2U-yV-AJS" firstAttribute="centerX" secondItem="qGE-QU-IeK" secondAttribute="centerX" id="VFi-H1-ecx"/>
-                            <constraint firstItem="999-KL-I7a" firstAttribute="top" secondItem="k2U-yV-AJS" secondAttribute="bottom" constant="44" id="vzd-5D-CVF"/>
+                            <constraint firstItem="1iF-e5-rTe" firstAttribute="centerX" secondItem="qGE-QU-IeK" secondAttribute="centerX" id="kWS-57-5Ey"/>
+                            <constraint firstItem="LSJ-pI-bMa" firstAttribute="bottom" secondItem="90q-jj-Vld" secondAttribute="bottom" constant="101" id="m8h-sc-ti5"/>
+                            <constraint firstItem="90q-jj-Vld" firstAttribute="leading" secondItem="LSJ-pI-bMa" secondAttribute="leading" constant="45" id="wYo-jg-nU9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LSJ-pI-bMa"/>
                     </view>
                     <navigationItem key="navigationItem" id="vRL-kH-KnP"/>
+                    <connections>
+                        <outlet property="recommendationLabel" destination="MbZ-dH-j0S" id="E1T-hs-3hz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU1-Rj-SMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

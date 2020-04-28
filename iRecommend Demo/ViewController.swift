@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var recommendationLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func setRandomRecommendation(_ sender: Any) {
+    }
+    
 
 }
 
